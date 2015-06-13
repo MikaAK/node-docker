@@ -1,0 +1,3 @@
+FROM mikaak/node
+
+RUN npm install -g bower && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
