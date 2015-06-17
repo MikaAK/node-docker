@@ -22,5 +22,7 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.24.2/install.sh | s
    && nvm use default --default \
    && ln -s $NVM_DIR/versions/node/v$NODE_VERSION/bin/node /usr/bin/node \
    && ln -s $NVM_DIR/versions/node/v$NODE_VERSION/bin/npm /usr/bin/npm \
+   && npm config set user 0 \
+   && npm config set unsafe-perm true \
    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* 
 
