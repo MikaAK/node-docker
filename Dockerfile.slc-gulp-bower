@@ -1,0 +1,32 @@
+FROM mikaak/node-bower:latest
+MAINTAINER Mika Kalathil <mika@edvisor.io>
+
+# Install NPM 
+RUN apt-get update \
+    && apt-get install -y python \
+    && npm i -q --no-optional -g gulp strongloop \ 
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+# ADD package.json jsedvisor/package.json
+# WORKDIR jsedvisor
+# RUN npm cache clean && npm i
+# ADD client/package.json client/package.json
+# WORKDIR client
+# RUN npm install --no-optional --production 
+#  
+# # Install Bower
+# ADD client/bower.json bower.json
+# RUN bower install --allow-root  --config.interactive=false -s
+# 
+# # Add Root
+# ADD . /root/jsedvisor
+#  
+# # Build Gulp 
+# RUN gulp build -p
+#  
+# # Expose Production Port
+# EXPOSE $PORT
+# 
+# WORKDIR /root/jsedvisor
+# 
+# # Start Server
+# ENTRYPOINT ["/usr/local/bin/slc", "run"]
