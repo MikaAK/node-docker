@@ -9,7 +9,7 @@ WORKDIR /root
 
 # Update container 
 RUN apt-get update -y \
-    && apt-get install -yq --no-install-recommends build-essential git ca-certificates curl \
+    && apt-get install -yq --no-install-recommends build-essential git ca-certificates ssh curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
