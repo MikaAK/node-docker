@@ -2,7 +2,7 @@ FROM ubuntu:latest
 MAINTAINER Mika Kalathil <mika@edvisor.io>
 
 # ENV Variables
-ENV NODE_VERSION 0.12.4
+ENV NODE_VERSION 5.1.1
 ENV NVM_DIR /root/.nvm
 
 WORKDIR /root
@@ -10,6 +10,7 @@ WORKDIR /root
 # Update container 
 RUN apt-get update -y \
     && apt-get install -yq --no-install-recommends build-essential git ca-certificates ssh curl \
+    && mkdir /root/.ssh \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
